@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login Page</title>
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style_signup.css">
+  </head>
+  <body>
+    <div class="signup-container">
+      <div class="logo-container">
+        <img class="logo-chatupm-ps" src="../static/chatupm-logo-PS.png" alt="logo chatupm">
+      </div>
+      <div class="space-32"></div>
+    <div class="formulario">
+      <form method="POST" action="/login">
+        <h1>Inicia sesión</h1>
+        <div class = "error-username"> 
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}</div>
+        <div class="space-24"></div>
+        <label for="username">Nombre de usuario</label>
+        <div class="space-8"></div>
+        <input type="text" id="username" name="username" required>
+        <div class="space-16"></div>
+        <label for="password">Contraseña</label>
+        <div class="space-8"></div>
+        <input type="password" id="password" name="password" required>
+        <div class="space-24"></div>
+        <div class="btn-submit-container">
+          <button class="primary-button-big" type="submit">Entrar</button>
+        </div>
+        <div class="space-24"></div>
+        <!--<div class="alternative-login">
+          <p class="text-s">¿Ya tienes cuenta?</p>
+          <div class="space-6"></div>
+          <a class="login-option" href="login">Iniciar sesión</a>
+        </div>-->
+      </form>
+    </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPM Chatbot</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+</head>
+
+<body>
+    <header class = "main-menu">
+        <div class="image-container">
+            <a href="."><img class="logo-chatUPM" src="./static/chatupm.png" alt="ChatUPM logo"></a>
+            <div class="space24"></div>
+            <a href="https://www.upm.es" target="_blank"><img class="logo-UPM" src="./static/UPM.png" alt="UPM logo"></a>
+        </div> 
+        <div class="header-buttons">
+            {% if auth_status %}
+                <a class="primary-button" href="chatbot" target="_blank">Chatea</a>
+                <a class="secondary-button" href="logout" target="_blank">Salir</a>
+            {% else %}
+                <a class="secondary-button" href="signup" target="_blank">Regístrate</a>
+                <a class="primary-button" href="chatbot" target="_blank">Chatea</a>
+            {% endif %}
+              
+        </div>
+    </header>
+
+    <h1> ChatUPM, tu asistente virtual personal </h1>
+    <div class="detalle">
+        <p>Todo sobre la normativa de alumnos de la </br> Universidad Politécnica de Madrid.</p>
+    </div>
+    <div class="space-16"></div>
+    <img class="sol" src="../static/ChatUPMIcon-Positive.png" alt="logo svg">
+    <div class="space-16"></div>
+    <div class="intro">
+        <p> Habla con nuestro chatbot para resolver todas tus dudas y consultas sobre la normativa legal de alumnos de la Universidad Politécnica de Madrid.
+        Aquí encontrarás respuestas claras y precisas a preguntas sobre matrículas, plazos, requisitos de asistencia y más: Todo lo necesario para guiarte en la universidad.</p>
+        <p> ¡Bienvenido a ChatUPM, tu aliado virtual en la UPM! </p>
+    </div>
+    <div class="space24"></div>
+    <h3> Cómo usar ChatUPM</h3>
+    <div class="boxes">
+        <div class="box-1">
+            <div class="texto-1">
+                <p class="num-1">1.</p> 
+                <p>Regístrate o inicia sesión para tener acceso a tus conversaciones en todo momento.</br>
+                </br>
+                ¡Protege tu cuenta, mantén tu privacidad!</p>
+            </div>
+            <div class="image-1">
+                <img class="login" src="../static/login.svg" alt="login svg">
+            </div>
+        </div>
+        <div class="box-2">
+            <div class="texto-2">
+                <p class="num-2">2.</p> 
+                <p>Pregunta tu duda. </br>
+                ¿Quieres saber cuántas plazas se reservan a mayores de 25 años? </br>
+                </br>
+                ¡No esperes más! </p> 
+            </div>
+            <div class="space-16"></div>
+            <div class="image-2">
+                <img class="question" src="../static/question.svg" alt="question svg">
+            </div>
+        </div>
+        <div class="box-3">
+            <div class="texto-3">
+                <p class="num-3">3.</p> 
+                <p class="link-normativa">Hecho a tu medida. ChatUPM te dará una respuesta en base a los últimos documentos de la <a href="https://www.upm.es/UPM/NormativaLegislacion/ActuacionesRegulaciones/Grado"> normativa de alumnos</a>.
+                
+            </p>
+            </div>
+            <div class="space-16"></div>
+            <div class="image-3">
+                <img class="data" src="../static/data.svg" alt="data svg">
+            </div>
+        </div>
+    </div>
+    <div class="space-16"></div>
+    <p class="inciso">¡Y ya está! No necesitas nada más. Es así de simple.<br/> 
+        Juntos encontramos respuestas. Contáctanos y aclara cualquier duda que tengas:
+        <a class="email-link" href="mailto:paula.robles.lopez@alumnos.upm.es">paula.robles.lopez@alumnos.upm.es</a>
+    </p>
+    <div class="space64"></div>
+<div class="reminder">
+    <div class="reminder-texto">
+        <p class="eslogan">¿Quieres descubrir más sobre ChatUPM y todo lo que te ofrece? </p>
+        <div class="space24"></div>
+        <a class="primary-button-final" href="https://github.com/paumurl?tab=repositories" target="_blank">¡Vamos allá!</a>
+        <div class="space-16"></div>
+    </div>
+    <div class="reminder-image">
+        <img class="startup" src="../static/startup-cropped.svg" alt="forward svg">
+    </div>
+</div>
+<div class="space88"></div>
+
+<footer>
+    <img class="logo-footer" src="./static/chatupm.png" alt="ChatUPM logo">
+</footer>
+<div class="texto-footer">
+    <p>Copyright © 2023 Paula</p>
+    <p class="email"><a href="mailto:paula.robles.lopez@alumnos.upm.es">paula.robles.lopez@alumnos.upm.es</a></p>
+</div>
+</div>
+</body>
+</div>
+</html>

@@ -1,0 +1,350 @@
+/* Buttons */
+
+:root {
+  --primary-400: #4767CD;
+  --primary-700: #141D39;
+  --primary-600: #142E81;
+  --primary-500: #2141A6;
+  --primary-300: #6886E6;
+  --primary-200: #B6CCFD;
+  --primary-100: #FCFDFF;
+
+  --neutral-40: #2E3340;
+  --neutral-100: #4C515E;
+  --neutral-80: #644F7C;
+  --neutral-60: #9297A4;
+  --neutral-20: #B7BBC5;
+  --neutral-10: #E3E5EA;
+  --neutral-05: #FFFFFF;
+  --neutral-110: #1B202D;
+
+  --secondary-400: #FFAA50;
+  --secondary-300: #FFBA71;
+  --secondary-200: #FDD4A8;
+  --secondary-100: #FFE2C4;
+  --secondary-50: #FFF6EC;
+}
+
+.header-buttons a {
+  border-radius: 100px;
+  padding: 10px 32px 10px 32px;
+  transition: 0.2s ease-in-out;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+
+}
+
+
+.secondary-button{
+  background-color: var(--primary-700);
+  text-decoration:none;
+  border-radius: 100px;
+  margin: 10px;
+  border: 2px solid #FFFFFF; 
+}
+
+.primary-button{
+  background-color: var(--primary-400);
+  text-decoration:none;
+  box-shadow: 0px 4px 18px 0px #31314914;
+  border-radius: 100px;
+  color: white;
+
+}
+
+.primary-button:hover{
+  background-color: var(--primary-300);
+  text-decoration: none;
+}
+
+.secondary-button:hover{
+  background-color: var(--neutral-100);
+  text-decoration: none;
+}
+
+
+
+/*Main */
+body {
+    padding-top: 144px;
+    font-family: Montserrat, sans-serif;
+    background-color: #FFFfff;
+    margin:0;
+}
+
+
+h1 {
+    color: #313149;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+h2 {
+    color: #313149;
+    text-align: center;
+    font-size: 24px;
+}
+
+h3 {
+  color: #313149;
+  text-align: center;
+  font-size: 22px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.detalle{
+  margin-top: -8px;
+  margin-left: 30%;
+  margin-right: 30%;
+  font-size: 18px;
+  text-align: center;
+  color: var(--neutral-60);
+  font-family: Montserrat;
+  font-style: italic;
+  line-height: 28px;
+
+}
+
+.sol{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40px;
+  height: auto;
+}
+
+.boxes {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  line-height:24px;
+}
+
+.box-1,.box-2,.box-3 {
+  margin: 10px;
+  width: 250px;
+  background-color: var(--neutral-05);
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 32px 0px #2E33401A;
+  align-items:center;
+  
+}
+.texto-1,.texto-2,.texto-3 {
+  display: flex;
+  align-items:baseline;
+  font-size:16px;
+  line-height:26px;
+}
+
+.num-1,.num-2,.num-3 {
+  margin-left:5%;
+  padding-right: 10px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 0px;
+  color: var(--secondary-400);
+  margin-top: 16px;
+}
+
+.image-1,.image-2,.image-3 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  
+}
+
+.login, .question, .data {
+  width: 212px;
+  height:auto;
+}
+
+.link-normativa a {
+  text-decoration: none;
+  color: var(--primary-400);
+  transition: 0.2s ease-in-out;
+}
+
+.link-normativa a:hover {
+  text-decoration: none;
+  color: var(--primary-200);
+}
+
+.intro,.inciso {
+    text-align: center;
+    margin-left: 28%;
+    margin-right: 28%;
+    color: #313149;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*Main header*/
+
+
+.main-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  background-color: var(--primary-700);
+  top: 0;
+  width: 100%;
+  box-shadow: 0px 0px 32px 0px #2e334049;
+}
+
+.header-buttons{
+  padding: 16px 40px;
+}
+
+.image-container{
+  display:flex;
+  padding: 16px 40px;
+}
+
+.logo-UPM{
+  width: auto;
+  height: 48px;
+}
+
+.logo-chatUPM{
+  width: auto;
+  height: 48px;
+
+}
+
+.space88 {
+  height: 88px;
+  width: 88px;
+}
+.space24 {
+  height: 24px;
+  width: 24px;
+}
+
+.space64 {
+  height: 64px;
+  width: 64px;
+}
+
+.space-16{
+  height: 16px;
+  width: 16px;
+}
+.space-8{
+  height: 8px;
+  width: 8px;
+}
+
+.reminder{
+  padding: 24px 64px 24px 64px;
+  margin-left: 22%;
+  margin-right: 22%;
+  font-weight: 600;
+  background-color: var(--primary-600);
+  border-radius: 8px;
+  color: var(--neutral-05);
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reminder-texto{
+  padding-top:0;
+  display: block;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+  font-size:16px;
+  line-height:26px;
+}
+
+.eslogan{
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+.reminder-image{
+  display:flex;
+  padding-top:8px;
+  justify-content:left;
+  align-items: left;
+  text-align: left;
+}
+
+.startup {
+  transform: scale(-1,1);
+  width: 130px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.primary-button-final{
+  background-color: var(--primary-400);
+  text-decoration:none;
+  box-shadow: 0px 4px 18px 0px #31314914;
+  border-radius: 100px;
+  color: white;
+  padding: 16px 32px;
+
+}
+
+.primary-button-final:hover{
+  background-color: var(--primary-300);
+  text-decoration: none;
+}
+
+
+/*Footer*/
+footer {
+  background-color: var(--neutral-40);
+  margin:0;
+  padding: 24px;
+}
+
+.logo-footer {
+  width: auto;
+  height: 48px;
+  padding-left:32px;
+}
+
+.texto-footer {
+  margin:0;
+  padding-left: 56px;
+  padding-right: 56px;
+  background-color: var(--neutral-110);
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--neutral-05);
+  font-size: 14px;
+}
+
+.email a{
+  color: var(--neutral-05);
+  transition: 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.email a:hover {
+  color: var(--neutral-20);
+  text-decoration: none;
+}
+
+.email-link {
+  text-decoration: none;
+  color: var(--primary-400);
+  transition: 0.2s ease-in-out;
+}
+
+.email-link:hover {
+  text-decoration: none;
+  color: var(--primary-200);
+}
