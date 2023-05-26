@@ -74,7 +74,7 @@ Just follow the steps, register and login to begin the ChatUPM experience:
 
 
 ## Configuration
-ChatUPM requires specific configuration. You should have your own keys and variables in the ``model/config.py`` file. You can also customize its behavior by modifying the settings in the ``model/chatbot/chatbot.py`` file. Adjust the responses, add new rules, or improve the chatbot's capabilities according to your needs.
+ChatUPM requires specific configuration. You should have your own keys and variables in the ``model/config.py`` file. You can also customize its behavior by modifying the GPT settings in the ``model/chatbot/chatbot.py`` file. Adjust the responses, add new rules, or improve the chatbot's capabilities according to your needs.
 
 <!--
 ### License
