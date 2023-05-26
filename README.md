@@ -59,8 +59,8 @@ Here's an example of how to interact with ChatUPM through the fronted architectu
   <img width="450" src="demo/website1.png" alt="ChatUPM website">
   <img width="450" src="demo/website2.png" alt="ChatUPM website">
   <img width="450" src="demo/website3.png" alt="ChatUPM website">
-  
-The homepage.
+</p>  
+<p align="center"> The homepage.</p>
 </p>
 <br/>
 
