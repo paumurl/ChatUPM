@@ -16,15 +16,15 @@ To use ChatUPM, you need to have Python installed on your machine. Follow these 
 > Bear in mind that you need an API key for the use of the OpenAI models. This project was built with the [Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/chatgpt-quickstart?tabs=command-line&pivots=programming-language-python) in mind, but can be adapted nonetheless.<br/>
 1. Clone the ChatUPM repository:
 ```bash
-git clone https://github.com/{your_username}/ChatUPM.git
+$ git clone https://github.com/{your username}/ChatUPM.git
 ```
 2. Install the required dependencies:
 ```bash
-pip instal -r requirements.txt
+$ pip instal -r requirements.txt
 ```
 3. Run the ChatUPM application:
 ```bash
-python app/app.py
+$ python {your path}/app/app.py
 ```
 
 This will launch the ChatUPM locally hosted website in localhost:5000.
@@ -41,7 +41,7 @@ This project consisted of different functionalities:
 ### First time: modules
 As in any project, you can individually run different modules depending on your needs for funcionalities. To run ChatUPM REST API, you need the embeddings dataframe. If this is the first time you run the project and are not using the data provided here, then you will need first to scrape the normative and generate the embeddings for the data chunks. This can be simply done by following running:
 ```
-python "model/processing/process.py"
+$ python {your path}/model/processing/process.py
 ```
 And that's it! You now have your dataframe, locally stored in the existing ``data`` folder.
 
