@@ -45,7 +45,7 @@ python "model/processing/process.py"
 ```
 And that's it! You now have your dataframe, locally stored in the existing ``data`` folder.
 
-If you wish, you may obtain obtain the scraping and embeddings separately! Simply instantiate the ``model/scraping/generalScraper`` class or ``model/embeddings/embedder`` class respectively. You can proceed in the same way with ``model/chatbot/chatBot`` class to obtain the ChatUPM responses through the terminal:
+If you wish, you may obtain obtain the scraping and embeddings separately! Simply instantiate the ``model/scraping/generalScraper`` class or ``model/embeddings/embedder`` class respectively with the appropiate methods. You can proceed in the same way with ``model/chatbot/chatBot`` class to obtain the ChatUPM responses through the terminal:
 
 <p align="center">
     <img width="800" src="demo/terminal.png" alt="ChatUPM terminal response">
