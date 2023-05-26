@@ -83,7 +83,7 @@ This project is licensed under the MIT License.
 ## Acknowledgments
 Special mention goes to Víctor Robles Forcada and Álvaro García Barragán for their invaluable resources and guidance throughout the development of this project.  -->
 
-## Contact Information
+## Contact information
 If you have any questions or feedback, feel free to reach out:
 
 Email: paularobleslopez@gmail.com\
