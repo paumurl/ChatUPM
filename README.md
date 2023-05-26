@@ -1,4 +1,4 @@
-# [In progress] ChatUPM
+# [ONGOING] ChatUPM
 
 My Master's final thesis, a personalized chatbot versed in the Polytechnic University of Madrid's normative: ChatUPM. 
 
