@@ -1,0 +1,9 @@
+# Ignore compiled Python bytecode files
+__pycache__/
+*.py[cod]
+
+# Ignore log files
+*.log
+
+# Ignore user-specific IDE settings
+.vscode/
