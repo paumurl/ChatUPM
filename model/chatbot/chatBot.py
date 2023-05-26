@@ -120,7 +120,7 @@ class chatBot:
 
 
 if __name__ == "__main__":
-    df = pd.read_pickle("../data/normativa_embedding_class.pkl")
+    df = pd.read_pickle("../../data/normativa_embedding_class.pkl")
     query = '¿Cuántos créditos necesito para que no me echen de la UPM?'
     chatupm = chatBot(df)
     chatupm.answer(query)

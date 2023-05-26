@@ -1,58 +1,30 @@
-from chatbot.chatBot import chatBot
-from chatbot.similarity import similarity
-
-# OTHER DEPENDENCIES
-# For the scraping
-from bs4 import BeautifulSoup
-import requests
-import re
-from urllib.parse import urljoin
-import lxml
-
-# To convert pdfs to text
-import PyPDF2
-import io
-import os
-
-# Text wrangling
-import pandas as pd
-import numpy as np
-
-# Time efficiency and optimization
-import time
-from concurrent.futures import ThreadPoolExecutor
-
-# OpenAI access
-import json
-import openai
-
-# To create new embeddings using convolutional networks
-import tensorflow_hub as hub
-import tensorflow_text
-
-# Flask app
-from flask import Flask, request, jsonify, render_template, redirect, url_for, flash, session, abort
-import jinja2
-from flask_jwt_extended import JWTManager, jwt_required, create_access_token, get_jwt_identity
-from flask_sqlalchemy import SQLAlchemy
-from django.utils.http import url_has_allowed_host_and_scheme
-from flask_login import LoginManager, UserMixin, login_user, login_required, current_user, logout_user
-from werkzeug.security import generate_password_hash, check_password_hash
-from functools import wraps
-import sys
 
 # Module management
+import sys
+import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 script_dir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(script_dir)
+
+# Import classes from chatbot folder
+from model.chatbot.chatBot import chatBot
+from model.chatbot.similarity import similarity
+
+# Flask app
+from flask import Flask, request, jsonify, render_template, redirect, url_for, flash, session, abort
+from flask_jwt_extended import JWTManager, jwt_required, create_access_token, get_jwt_identity
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager, UserMixin, login_user, login_required, current_user, logout_user
+from werkzeug.security import generate_password_hash, check_password_hash
+
 
 
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.sqlite3'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config["JWT_SECRET_KEY"] = 'b6b6ed9245db93cc393dbe62cca20781a45d10bd8315161e19b813200ef4dae6'
-app.config["SECRET_KEY"] = "edb44a689a364929c455bc2bc0e3b65904ea26d3e2b051a8df2bce2c7fcf4dcd"
+app.config["JWT_SECRET_KEY"] =  os.environ['JWT_SECRET_KEY'] #generated with secrets.token_hex(64)
+app.config["SECRET_KEY"] = os.environ['SECRET_KEY'] #generated with secrets.token_hex(64)
 db = SQLAlchemy(app)
 jwt = JWTManager(app)
 
@@ -73,7 +45,6 @@ class User(UserMixin, db.Model):
     def check_password(self, password):
         return check_password_hash(self.password, password)
     
-
     @login_manager.user_loader
     def load_user(user_id):
         return User.query.filter(User.id == user_id).first()
@@ -163,6 +134,5 @@ def page_not_found(e):
 if __name__ == "__main__":
     #with app.app_context():
     #    db.create_all()
-    #app.config['TIMEOUT'] = 300 # 5 minutes
     app.run(debug=True, port=5000, host="127.0.0.1", threaded=True)
 

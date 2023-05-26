@@ -171,7 +171,7 @@ class pdfProcessor:
 
         agg_df['chunks'] = df['texto'].apply(self.split_text)
         chunks_df = self.explode_dataframe(agg_df)
-        chunks_df.to_pickle("../data/normativa_exploded_class.pkl")
+        chunks_df.to_pickle("../../data/normativa_exploded_class.pkl")
 
         return chunks_df
 

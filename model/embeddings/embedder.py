@@ -71,7 +71,7 @@ class embedder:
 
         # Assign the temporary list to the 'embedding' column
         self.df['embedding'] = embeddings
-        self.df.to_pickle("../data/normativa_embedding_class.pkl")
+        self.df.to_pickle("../../data/normativa_embedding_class.pkl")
 
         return self.df
 

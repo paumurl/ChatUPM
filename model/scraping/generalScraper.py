@@ -1,3 +1,8 @@
+# Module management
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from scraping.alumnoParser import alumnoParser
 from scraping.pdfProcessor import pdfProcessor
 
@@ -12,3 +17,7 @@ class generalScraper:
         """Parse the alumnos url, downloads the pdfs and creates a dataframe."""
         dataframe = self.pdf_processor.create_dataframe()
         return dataframe
+
+if __name__ == "__main__":
+    df = generalScraper().to_dataframe()
+    print(df.head())
