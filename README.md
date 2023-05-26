@@ -38,7 +38,7 @@ This project consisted of different functionalities:
 - generate embeddings, which are numeric representation vectors that capture semantic relationships and enable similarity search. You can read more [here](https://openai.com/blog/introducing-text-and-code-embeddings).
 - the chatbot itself, served by a Flask REST API.
 
-### First time: modules
+### Want to try? Modules
 As in any project, you can individually run different modules depending on your needs for funcionalities. To run ChatUPM REST API, you need the embeddings dataframe. If this is the first time you run the project and are not using the data provided here, then you will need first to scrape the normative and generate the embeddings for the data chunks. This can be simply done by following running:
 ```
 $ python {your path}/model/processing/process.py
