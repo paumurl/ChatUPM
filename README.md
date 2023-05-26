@@ -34,7 +34,7 @@ This will launch the ChatUPM locally hosted website in localhost:5000.
 ChatUPM is designed to provide you with quick and accurate information about the student regulations at UPM. Simply start a conversation with the chatbot and ask your questions. It will understand and respond accordingly.
 
 This project consisted of different functionalities:
-- web scraping from [student regulations' of the UPM](https://www.upm.es/Estudiantes/NormativaLegislacion/NormasEspecificas/Grado) to create a dataframe of pdf chunks, tracking the pdf origin of each text chunk. By default, to feed GPT models, it's generally recommended to keep the input within a range of 2048 to 4096 tokens.
+- web scraping from [student regulations of the UPM](https://www.upm.es/Estudiantes/NormativaLegislacion/NormasEspecificas/Grado) to create a dataframe of pdf chunks, tracking the pdf origin of each text chunk. By default, to feed GPT models, it's generally recommended to keep the input within a range of 2048 to 4096 tokens.
 - generate embeddings, which are numeric representation vectors that capture semantic relationships and enable similarity search. You can read more [here](https://openai.com/blog/introducing-text-and-code-embeddings).
 - the chatbot itself, served by a Flask REST API.
 
