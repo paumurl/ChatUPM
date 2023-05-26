@@ -55,19 +55,20 @@ If you wish, you may obtain obtain the scraping and embeddings separately! Simpl
 ### Fronted
 Here's an example of how to interact with ChatUPM through the fronted architecture:
 
-<div class="container" style="display:flex">
-  <img width="330" src="demo/website1.png" alt="ChatUPM website">
-  <img width="330" src="demo/website2.png" alt="ChatUPM website">
-  <img width="330" src="demo/website3.png" alt="ChatUPM website">
-</div>
-<p align="center">The homepage.</p>
+<p align="center">
+  <img width="450" src="demo/website1.png" alt="ChatUPM website">
+  <img width="450" src="demo/website2.png" alt="ChatUPM website">
+  <img width="450" src="demo/website3.png" alt="ChatUPM website">
+  
+The homepage.
+</p>
 <br/>
 
 Just follow the steps, register and login to begin the ChatUPM experience:
 
 <div class="container2">
   <p align="center">
-    <img width="400" src="demo/register.png" alt="ChatUPM register website">
+    <img width="450" src="demo/register.png" alt="ChatUPM register website">
   </p>
 </div>
 
