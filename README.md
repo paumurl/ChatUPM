@@ -34,12 +34,12 @@ This will launch the ChatUPM locally hosted website in localhost:5000.
 ChatUPM is designed to provide you with quick and accurate information about the student regulations at UPM. Simply start a conversation with the chatbot and ask your questions. It will understand and respond accordingly.
 
 This project consisted of different functionalities:
-- web scraping from [student regulations of the UPM](https://www.upm.es/Estudiantes/NormativaLegislacion/NormasEspecificas/Grado) to create a dataframe of pdf chunks, tracking the pdf origin of each text chunk. By default, to feed GPT models, it's generally recommended to keep the input within a range of 2048 to 4096 tokens.
-- generate embeddings, which are numeric representation vectors that capture semantic relationships and enable similarity search. You can read more [here](https://openai.com/blog/introducing-text-and-code-embeddings).
+- web scraping from [student regulations of the UPM](https://www.upm.es/Estudiantes/NormativaLegislacion/NormasEspecificas/Grado) to create a dataframe of pdf chunks, tracking the pdf origin of each text chunk. By default, to feed GPT models it's generally recommended to keep the input within a range of 2048 to 4096 tokens.
+- generating embeddings, which are numeric representation vectors that capture semantic relationships and enable similarity search. You can read more [here](https://openai.com/blog/introducing-text-and-code-embeddings).
 - the chatbot itself, served by a Flask REST API.
 
 ### Want to try? Modules
-As in any project, you can individually run different modules depending on your needs for funcionalities. To run ChatUPM REST API, you need the embeddings dataframe. If this is the first time you run the project and are not using the data provided here, then you will need first to scrape the normative and generate the embeddings for the data chunks. This can be simply done by following running:
+As in any project, you can individually run different modules depending on your needs for funcionalities. To run ChatUPM REST API, you need the embeddings dataframe. If this is the first time you run the project and are not using the data provided here, then you will need first to scrape the normative and generate the embeddings for the data chunks. This can be simply done by running the following command:
 ```
 $ python {your path}/model/processing/process.py
 ```
