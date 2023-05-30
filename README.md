@@ -16,7 +16,7 @@ To use ChatUPM, you need to have Python installed on your machine. Follow these 
 > Bear in mind that you need an API key for the use of the OpenAI models. This project was built with the [Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/chatgpt-quickstart?tabs=command-line&pivots=programming-language-python) in mind, but can be adapted nonetheless.<br/>
 1. Clone the ChatUPM repository:
 ```bash
-$ git clone https://github.com/{your username}/ChatUPM.git
+$ git clone https://github.com/paumurl/ChatUPM.git
 ```
 2. Install the required dependencies:
 ```bash
