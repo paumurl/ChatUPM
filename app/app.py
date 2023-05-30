@@ -18,10 +18,12 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, cur
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
+# Construct the path for the desired database location
+db_path = os.path.join(script_dir, 'instance', 'test.sqlite3')
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + db_path
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config["JWT_SECRET_KEY"] =  os.environ['JWT_SECRET_KEY'] #generated with secrets.token_hex(64)
 app.config["SECRET_KEY"] = os.environ['SECRET_KEY'] #generated with secrets.token_hex(64)
@@ -132,7 +134,7 @@ def page_not_found(e):
 
 
 if __name__ == "__main__":
-    #with app.app_context():
+    # with app.app_context():
     #    db.create_all()
     app.run(debug=True, port=5000, host="127.0.0.1", threaded=True)
 
