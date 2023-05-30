@@ -24,7 +24,7 @@ $ pip instal -r requirements.txt
 ```
 3. Run the ChatUPM application:
 ```bash
-$ python {your path}/app/app.py
+$ python {your path}/run.py
 ```
 
 This will launch the ChatUPM locally hosted website in localhost:5000.
@@ -39,7 +39,7 @@ This project consisted of different functionalities:
 - the chatbot itself, served by a Flask REST API.
 
 ### Want to try? Modules
-As in any project, you can individually run different modules depending on your needs for funcionalities. To run ChatUPM REST API, you need the embeddings dataframe. If this is the first time you run the project and are not using the data provided here, then you will need first to scrape the normative and generate the embeddings for the data chunks. This can be simply done by running the following command:
+As in any project, you can individually run different modules depending on your needs for funcionalities. To run the ChatUPM REST API, you need the embeddings dataframe. If this is the first time you run the project and are not using the data provided here, then you will need first to scrape the normative and generate the embeddings for the data chunks. This can be simply done by running the following command:
 ```
 $ python {your path}/model/processing/process.py
 ```
@@ -77,7 +77,7 @@ Just follow the steps, register and login to begin the ChatUPM experience:
 ChatUPM requires specific configuration. You should have your own keys and variables in the ``model/config.py`` file. You can also customize its behavior by modifying the GPT settings in the ``model/chatbot/chatbot.py`` file. Adjust the responses, add new rules, or improve the chatbot's capabilities according to your needs.
 
 <!--
-### License
+## License
 This project is licensed under the MIT License.
 
 ## Acknowledgments
