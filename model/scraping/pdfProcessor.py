@@ -29,7 +29,7 @@ class pdfProcessor:
 
         """
         self.url_alumnos = url_alumnos
-        self.max_tokens = 2046
+        self.max_tokens = 2048
 
     def download_pdf(self, pdf_url):
         """Download a PDF file from a given URL.
