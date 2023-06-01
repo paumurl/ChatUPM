@@ -71,6 +71,7 @@ Just follow the steps, register and login to begin the ChatUPM experience.
     <img width="450" src="demo/register.png" alt="ChatUPM register website">
   </p>
 </div>
+<br/>
 
 And now, chat away! Have a go at ChatUPM and the knowledge it holds regarding the students' legislation.
 <div class="container3">
