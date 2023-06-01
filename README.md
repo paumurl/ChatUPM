@@ -2,7 +2,7 @@
 
 My Master's final thesis, a personalized chatbot versed in the Polytechnic University of Madrid's normative: ChatUPM. 
 
-This project will ultimately results in a custom chatbot assistant fueled by GPT models (``text-embedding-ada-002`` for embeddings and ``gpt-35-turbo`` for the chatbot answers), supported by a REST API built with Flask. This virtual personal chatbot will assist for all things related to the student regulations at Universidad Politécnica de Madrid (UPM). With ChatUPM, you can get clear and precise answers to your questions and concerns regarding enrollment, deadlines, credits requirements, and more.\
+This project will ultimately results in a custom chatbot assistant fueled by GPT models (``text-embedding-ada-002`` for embeddings and ``gpt-35-turbo`` for the chatbot answers), supported by a REST API built with Flask and deployed using Waitress. This virtual personal chatbot will assist for all things related to the student regulations at Universidad Politécnica de Madrid (UPM). With ChatUPM, you can get clear and precise answers to your questions and concerns regarding enrollment, deadlines, credits requirements, and more.\
 Created to guide peers through the university journey!
 <br/>
 <br/>
@@ -22,7 +22,7 @@ $ git clone https://github.com/paumurl/ChatUPM.git
 ```bash
 $ pip instal -r requirements.txt
 ```
-3. Run the ChatUPM application:
+3. Run the ChatUPM application deployed using Waitress:
 ```bash
 $ python {your path}/run.py
 ```
@@ -64,7 +64,7 @@ Here's an example of how to interact with ChatUPM through the fronted architectu
 </p>
 <br/>
 
-Just follow the steps, register and login to begin the ChatUPM experience:
+Just follow the steps, register and login to begin the ChatUPM experience.
 
 <div class="container2">
   <p align="center">
@@ -72,16 +72,18 @@ Just follow the steps, register and login to begin the ChatUPM experience:
   </p>
 </div>
 
+And now, chat away! Have a go at ChatUPM and the knowledge it holds regarding the students' legislation.
+<div class="container3">
+  <p align="center">
+    <img width="450" src="demo/chatbot.png" alt="ChatUPM chat UI">
+  </p>
+</div>
 
 ## Configuration
 ChatUPM requires specific configuration. You should have your own keys and variables in the ``model/config.py`` file. You can also customize its behavior by modifying the GPT settings in the ``model/chatbot/chatbot.py`` file. Adjust the responses, add new rules, or improve the chatbot's capabilities according to your needs.
 
-<!--
-## License
-This project is licensed under the MIT License.
-
 ## Acknowledgments
-Special mention goes to Víctor Robles Forcada and Álvaro García Barragán for their invaluable resources and guidance throughout the development of this project.  -->
+Special mention goes to Víctor Robles Forcada and Álvaro García Barragán for their invaluable resources and guidance throughout the development of this project.
 
 ## Contact information
 If you have any questions or feedback, feel free to reach out:
