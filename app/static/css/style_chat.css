@@ -32,7 +32,6 @@ body {
 
 .container {
     width: 400px;
-    margin: auto;
     padding: 20px;
     background-color: var(--neutral-05);
     border-radius: 5px;
@@ -59,6 +58,7 @@ body {
 }
 
 #chat-form {
+    width: 100%;
     margin: 30px;
     text-align: center;
     font-family: Montserrat;
@@ -69,7 +69,7 @@ body {
 }
 
 #user-message {
-    width: 40%;
+    width: 60%;
     text-align:center;
     box-sizing: border-box;
     font-family: Montserrat;
@@ -104,11 +104,13 @@ body {
     }
 
 #message-container {
+    box-sizing: content-box;
     text-align:center;
     width: 60%;
     margin-top: 30px;
     position: relative;
-    max-height: 400px; /* Set a maximum height for the message container */
+    height: auto; /* Remove the fixed height */
+    max-height: 600px; /* Set a maximum height for the message container */
     overflow-y: auto; 
     
     }
@@ -146,11 +148,19 @@ body {
 }
 
 .chatbot-container {
-    align-content: center;
-    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust the width value as per your requirement */
+    height: 80%; /* Adjust the height value as per your requirement */
+    /* Add any other styling properties you need */
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-
+    align-items: center;
 }
+
 
 .logo-container {
     text-align: center;
