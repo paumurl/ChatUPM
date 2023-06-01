@@ -37,7 +37,7 @@ This project consisted of different functionalities:
 - web scraping from [student regulations of the UPM](https://www.upm.es/Estudiantes/NormativaLegislacion/NormasEspecificas/Grado) to create a dataframe of pdf chunks, tracking the pdf origin of each text chunk. By default, to feed GPT models it's generally recommended to keep the input within a range of 2048 to 4096 tokens.
 - generating embeddings, which are numeric representation vectors that capture semantic relationships and enable similarity search. You can read more [here](https://openai.com/blog/introducing-text-and-code-embeddings).
 - the chatbot itself, served by a Flask REST API.
-- 
+
 
 ### Fronted
 Once you have deployed the ChatUPM REST API (step 3 of the [Installation](#installation)), you can go to localhost:5000 to enjoy the web service. Here's an example of how to interact with ChatUPM through the fronted architecture:
