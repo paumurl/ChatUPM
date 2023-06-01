@@ -37,23 +37,10 @@ This project consisted of different functionalities:
 - web scraping from [student regulations of the UPM](https://www.upm.es/Estudiantes/NormativaLegislacion/NormasEspecificas/Grado) to create a dataframe of pdf chunks, tracking the pdf origin of each text chunk. By default, to feed GPT models it's generally recommended to keep the input within a range of 2048 to 4096 tokens.
 - generating embeddings, which are numeric representation vectors that capture semantic relationships and enable similarity search. You can read more [here](https://openai.com/blog/introducing-text-and-code-embeddings).
 - the chatbot itself, served by a Flask REST API.
-
-### Want to try? Modules
-As in any project, you can individually run different modules depending on your needs for funcionalities. To run the ChatUPM REST API, you need the embeddings dataframe. If this is the first time you run the project and are not using the data provided here, then you will need first to scrape the normative and generate the embeddings for the data chunks. This can be simply done by running the following command:
-```
-$ python {your path}/model/processing/process.py
-```
-And that's it! You now have your dataframe, locally stored in the existing ``data`` folder.
-
-If you wish, you may obtain obtain the scraping and embeddings separately! Simply instantiate the ``model/scraping/generalScraper`` class or ``model/embeddings/embedder`` class respectively with the appropiate methods. You can proceed in the same way with ``model/chatbot/chatBot`` class to obtain the ChatUPM responses through the terminal:
-
-<p align="center">
-    <img width="800" src="demo/terminal.png" alt="ChatUPM terminal response">
- </p>
-
+- 
 
 ### Fronted
-Here's an example of how to interact with ChatUPM through the fronted architecture:
+Once you have deployed the ChatUPM REST API (step 3 of the [Installation](#installation)), you can go to localhost:5000 to enjoy the web service. Here's an example of how to interact with ChatUPM through the fronted architecture:
 
 <p align="center">
   <img width="450" src="demo/website1.png" alt="ChatUPM website">
@@ -79,6 +66,21 @@ And now, chat away! Have a go at ChatUPM and the knowledge it holds regarding th
     <img width="450" src="demo/chatbot.png" alt="ChatUPM chat UI">
   </p>
 </div>
+
+
+### Want to try? Modules
+As in any project, you can individually run different modules depending on your needs for funcionalities. To run the ChatUPM REST API, you need the embeddings dataframe. If this is the first time you run the project and are not using the data provided here, then you will need first to scrape the normative and generate the embeddings for the data chunks. This can be simply done by running the following command:
+```
+$ python {your path}/model/processing/process.py
+```
+And that's it! You now have your dataframe, locally stored in the existing ``data`` folder.
+
+If you wish, you may obtain obtain the scraping and embeddings separately! Simply instantiate the ``model/scraping/generalScraper`` class or ``model/embeddings/embedder`` class respectively with the appropiate methods. You can proceed in the same way with ``model/chatbot/chatBot`` class to obtain the ChatUPM responses through the terminal:
+
+<p align="center">
+    <img width="800" src="demo/terminal.png" alt="ChatUPM terminal response">
+ </p>
+
 
 ## Configuration
 ChatUPM requires specific configuration. You should have your own keys and variables in the ``model/config.py`` file. You can also customize its behavior by modifying the GPT settings in the ``model/chatbot/chatbot.py`` file. Adjust the responses, add new rules, or improve the chatbot's capabilities according to your needs.
