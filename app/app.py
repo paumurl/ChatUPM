@@ -23,6 +23,8 @@ db_path = os.path.join(script_dir, 'instance', 'test.sqlite3')
 
 app = Flask(__name__)
 
+chatupm = chatBot()
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + db_path
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config["JWT_SECRET_KEY"] =  os.environ['JWT_SECRET_KEY'] #generated with secrets.token_hex(64)
@@ -112,10 +114,16 @@ def home():
     return render_template("index.html", auth_status=auth_status)
 
 
-@app.route('/chatbot',  methods=['POST', 'GET'])
+@app.route('/chatbot', methods=['GET', 'POST'])
 @login_required
 def chatbot():
-    # request.form.get('question')
+    if request.method == 'POST':
+        user = current_user.username
+        userText = request.form.get('msg')
+        botText = chatupm.answer(userText)  # Replace with your chatbot logic
+        response = {'botText': botText,
+                    'user': user}
+        return jsonify(response)
     return render_template("chatbot.html")
 
 @app.errorhandler(401)

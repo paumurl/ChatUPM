@@ -26,14 +26,14 @@ import tensorflow_text
 
 
 class chatBot:
-    def __init__(self, df):
+    def __init__(self):
         """Initialize the ChatBot object.
 
         Parameters:
             df (DataFrame): The input DataFrame containing the text data.
 
         """
-        self.df = df
+        self.df = pd.read_pickle("../../data/normativa_embedding_class.pkl")
 
     def tensor_embeddings(self, query):
         """Compute the tensor embeddings from the universal-sentence-encoder-multilingual.
@@ -62,7 +62,7 @@ class chatBot:
         return self.df
     
     
-    def answer(self, query, tensor=False):
+    def answer(self, query, terminal=False, tensor=False):
         """ The final form of our chatbot, that given a query by the user will retrieve the answer given Normativa Alumnos and 
         where to find further info.
         
@@ -111,16 +111,25 @@ class chatBot:
         where_all = [text for text in df_emb_tensor['normativa'].iloc[:3]]
         where = max(set(where_all), key=where_all.count)
         
-        response_message = "\nBienvenid@ al chatbot de la UPM."
-        response_message += f"\n\nPregunta: {query}\n"
-        response_message += f'\n{response["choices"][0]["message"]["content"]}'
-        source = f"\nPuede consultar más en {where}."
-        response_message += source
-        return print(response_message)
+        if terminal == True:
+            response_message = "\nBienvenid@ al chatbot de la UPM."
+            response_message += f"\n\nPregunta: {query}\n"
+            response_message += f'\n{response["choices"][0]["message"]["content"]}'
+            source = f"\nPuedes consultar más en {where}."
+            response_message += source
+            return response_message
+        
+        else:
+            response_message = f'\n{response["choices"][0]["message"]["content"]}'
+            source = f"\nPuedes consultar más en {where}."
+            response_message += source
+            return response_message
+
+        
 
 
 if __name__ == "__main__":
-    df = pd.read_pickle("../../data/normativa_embedding_class.pkl")
+    # df = pd.read_pickle("../../data/normativa_embedding_class.pkl")
     query = '¿Cuántos créditos necesito para que no me echen de la UPM?'
-    chatupm = chatBot(df)
-    chatupm.answer(query)
+    chatupm = chatBot()
+    chatupm.answer(query,terminal=True)
