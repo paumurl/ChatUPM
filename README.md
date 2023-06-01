@@ -1,4 +1,4 @@
-# [ONGOING] ChatUPM
+# ChatUPM
 
 My Master's final thesis, a personalized chatbot versed in the Polytechnic University of Madrid's normative: ChatUPM. 
 
@@ -82,6 +82,10 @@ And now, chat away! Have a go at ChatUPM and the knowledge it holds regarding th
 
 ## Configuration
 ChatUPM requires specific configuration. You should have your own keys and variables in the ``model/config.py`` file. You can also customize its behavior by modifying the GPT settings in the ``model/chatbot/chatbot.py`` file. Adjust the responses, add new rules, or improve the chatbot's capabilities according to your needs.
+
+## License
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0).
+You can find the full text of the license in the [LICENSE](LICENSE) file.
 
 ## Acknowledgments
 Special mention goes to Víctor Robles Forcada and Álvaro García Barragán for their invaluable resources and guidance throughout the development of this project.
