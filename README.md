@@ -1,8 +1,8 @@
-# [ONGOING] ChatUPM
+# ChatUPM
 
 My Master's final thesis, a personalized chatbot versed in the Polytechnic University of Madrid's normative: ChatUPM. 
 
-This project will ultimately results in a custom chatbot assistant fueled by GPT models (``text-embedding-ada-002`` for embeddings and ``gpt-35-turbo`` for the chatbot answers), supported by a REST API built with Flask. This virtual personal chatbot will assist for all things related to the student regulations at Universidad Politécnica de Madrid (UPM). With ChatUPM, you can get clear and precise answers to your questions and concerns regarding enrollment, deadlines, credits requirements, and more.\
+This project will ultimately results in a custom chatbot assistant fueled by GPT models (``text-embedding-ada-002`` for embeddings and ``gpt-35-turbo`` for the chatbot answers), supported by a REST API built with Flask and deployed using Waitress. This virtual personal chatbot will assist for all things related to the student regulations at Universidad Politécnica de Madrid (UPM). With ChatUPM, you can get clear and precise answers to your questions and concerns regarding enrollment, deadlines, credits requirements, and more.\
 Created to guide peers through the university journey!
 <br/>
 <br/>
@@ -22,7 +22,7 @@ $ git clone https://github.com/paumurl/ChatUPM.git
 ```bash
 $ pip instal -r requirements.txt
 ```
-3. Run the ChatUPM application:
+3. Run the ChatUPM application deployed using Waitress:
 ```bash
 $ python {your path}/run.py
 ```
@@ -38,6 +38,36 @@ This project consisted of different functionalities:
 - generating embeddings, which are numeric representation vectors that capture semantic relationships and enable similarity search. You can read more [here](https://openai.com/blog/introducing-text-and-code-embeddings).
 - the chatbot itself, served by a Flask REST API.
 
+
+### Fronted
+Once you have deployed the ChatUPM REST API (step 3 of the [Installation](#installation)), you can go to localhost:5000 to enjoy the web service. Here's an example of how to interact with ChatUPM through the fronted architecture:
+
+<p align="center">
+  <img width="450" src="demo/website1.png" alt="ChatUPM website">
+  <img width="450" src="demo/website2.png" alt="ChatUPM website">
+  <img width="450" src="demo/website3.png" alt="ChatUPM website">
+</p>  
+<p align="center"> The homepage.</p>
+</p>
+<br/>
+
+Just follow the steps, register and login to begin the ChatUPM experience.
+
+<div class="container2">
+  <p align="center">
+    <img width="450" src="demo/register.png" alt="ChatUPM register website">
+  </p>
+</div>
+<br/>
+
+And now, chat away! Have a go at ChatUPM and the knowledge it holds regarding the students' legislation.
+<div class="container3">
+  <p align="center">
+    <img width="450" src="demo/chatbot.png" alt="ChatUPM chat UI">
+  </p>
+</div>
+
+
 ### Want to try? Modules
 As in any project, you can individually run different modules depending on your needs for funcionalities. To run the ChatUPM REST API, you need the embeddings dataframe. If this is the first time you run the project and are not using the data provided here, then you will need first to scrape the normative and generate the embeddings for the data chunks. This can be simply done by running the following command:
 ```
@@ -52,36 +82,15 @@ If you wish, you may obtain obtain the scraping and embeddings separately! Simpl
  </p>
 
 
-### Fronted
-Here's an example of how to interact with ChatUPM through the fronted architecture:
-
-<p align="center">
-  <img width="450" src="demo/website1.png" alt="ChatUPM website">
-  <img width="450" src="demo/website2.png" alt="ChatUPM website">
-  <img width="450" src="demo/website3.png" alt="ChatUPM website">
-</p>  
-<p align="center"> The homepage.</p>
-</p>
-<br/>
-
-Just follow the steps, register and login to begin the ChatUPM experience:
-
-<div class="container2">
-  <p align="center">
-    <img width="450" src="demo/register.png" alt="ChatUPM register website">
-  </p>
-</div>
-
-
 ## Configuration
 ChatUPM requires specific configuration. You should have your own keys and variables in the ``model/config.py`` file. You can also customize its behavior by modifying the GPT settings in the ``model/chatbot/chatbot.py`` file. Adjust the responses, add new rules, or improve the chatbot's capabilities according to your needs.
 
-<!--
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0).
+You can find the full text of the license in the [LICENSE](LICENSE) file.
 
 ## Acknowledgments
-Special mention goes to Víctor Robles Forcada and Álvaro García Barragán for their invaluable resources and guidance throughout the development of this project.  -->
+Special mention goes to Víctor Robles Forcada and Álvaro García Barragán for their invaluable resources and guidance throughout the development of this project.
 
 ## Contact information
 If you have any questions or feedback, feel free to reach out:
