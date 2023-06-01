@@ -39,7 +39,7 @@ This project consisted of different functionalities:
 - the chatbot itself, served by a Flask REST API.
 
 
-### Fronted
+### Self-hosted web application
 Once you have deployed the ChatUPM REST API (step 3 of the [Installation](#installation)), you can go to localhost:5000 to enjoy the web service. Here's an example of how to interact with ChatUPM through the fronted architecture:
 
 <p align="center">
@@ -68,7 +68,7 @@ And now, chat away! Have a go at ChatUPM and the knowledge it holds regarding th
 </div>
 
 
-### Want to try? Modules
+### Want to try modules?
 As in any project, you can individually run different modules depending on your needs for funcionalities. To run the ChatUPM REST API, you need the embeddings dataframe. If this is the first time you run the project and are not using the data provided here, then you will need first to scrape the normative and generate the embeddings for the data chunks. This can be simply done by running the following command:
 ```
 $ python {your path}/model/processing/process.py
