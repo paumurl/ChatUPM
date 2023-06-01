@@ -34,13 +34,13 @@
                 var messageContainer = $('#message-container');
                 var userMessage = $('<div class="message user-message"><strong>'+ user+':</strong> ' + userMessage + '</div>');
                 messageContainer.append(userMessage);
-                messageContainer.scrollTop(messageContainer[0].scrollHeight);
             }
 
             function displayBotMessage(botText) {
                 var messageContainer = $('#message-container');
                 var botMessage = $('<div class="message bot-message"><strong>ChatUPM:</strong> ' + botText + '</div>');
                 messageContainer.append(botMessage);
+                messageContainer.scrollTop(messageContainer[0].scrollHeight);
             }
 
             $('#user-message').focus();

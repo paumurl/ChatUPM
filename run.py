@@ -1,15 +1,5 @@
-import sys
-import os
+from waitress import serve
+from app.app import app
 
-
-# Get the absolute path of the current file
-current_file_path = os.path.abspath(__file__)
-
-# Get the parent directory of the current file
-parent_directory = os.path.dirname(current_file_path)
-
-# Create the relative path to app.py
-app_file_path = os.path.join(parent_directory, 'app', 'app.py')
-
-# Run the app.py script using the relative path
-os.system(f'python {app_file_path}')
+if __name__ == "__main__":
+    serve(app, host='0.0.0.0', port=5000)

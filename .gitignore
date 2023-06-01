@@ -7,3 +7,6 @@ __pycache__/
 
 # Ignore user-specific IDE settings
 .vscode/
+
+# Ignore env
+.env
