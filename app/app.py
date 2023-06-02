@@ -11,6 +11,7 @@ from model.chatbot.chatBot import chatBot
 from model.chatbot.similarity import similarity
 
 # Flask app
+import json
 from flask import Flask, request, jsonify, render_template, redirect, url_for, flash, session, abort
 from flask_jwt_extended import JWTManager, jwt_required, create_access_token, get_jwt_identity
 from flask_sqlalchemy import SQLAlchemy
