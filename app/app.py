@@ -1,4 +1,3 @@
-
 # Module management
 import sys
 import os
@@ -7,31 +6,29 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(script_dir)
 
 # Import classes from chatbot folder
-from model.chatbot.chatBot import chatBot
-from model.chatbot.similarity import similarity
+from model.chatbot.chatBot import ChatBot
+from model.chatbot.similarity import Similarity
 
 # Flask app
 import json
-from flask import Flask, request, jsonify, render_template, redirect, url_for, flash, session, abort
-from flask_jwt_extended import JWTManager, jwt_required, create_access_token, get_jwt_identity
+from flask import Flask, request, jsonify, render_template, redirect, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, current_user, logout_user
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
 # Construct the path for the desired database location
-db_path = os.path.join(script_dir, 'instance', 'test.sqlite3')
+db_path = os.path.join(script_dir, 'instance', 'dev.sqlite3')
 
 app = Flask(__name__)
 
-chatupm = chatBot()
+chatupm = ChatBot()
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + db_path
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config["JWT_SECRET_KEY"] =  os.environ['JWT_SECRET_KEY'] #generated with secrets.token_hex(64)
 app.config["SECRET_KEY"] = os.environ['SECRET_KEY'] #generated with secrets.token_hex(64)
 db = SQLAlchemy(app)
-jwt = JWTManager(app)
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -91,7 +88,7 @@ def signup():
             return redirect(url_for('signup'))
 
         # create a new user with the form data. Hash the password so the plaintext version isn't saved.
-        new_user = User(username=username, password=generate_password_hash(password, method='sha256'))
+        new_user = User(username=username, password=generate_password_hash(password))
    
         # add the new user to the database
         db.session.add(new_user)
@@ -143,5 +140,8 @@ def page_not_found(e):
 
 
 #if __name__ == "__main__":
+    #with app.app_context():
+    #    db.create_all()
+    
 #    app.run(debug=False, port=5000, host="127.0.0.1", threaded=True)
 
