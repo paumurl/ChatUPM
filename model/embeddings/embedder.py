@@ -43,12 +43,11 @@ class Embedder:
         try:
             result = openai.Embedding.create(deployment_id=deployment_id, input=text)
             result = np.array(result["data"][0]["embedding"])
+            return result
 
         except Exception as e:
-            print(f"Error creating embedding for '{text}': {e}")
-            result = np.array([])
+            raise Exception(f"Error creating embedding from '{text}': {e}") from e
 
-        return result
 
 
     def dataframe_embedding(self):

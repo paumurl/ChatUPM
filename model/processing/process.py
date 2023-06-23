@@ -34,6 +34,6 @@ class Process:
         # Return the final DataFrame
         return df_with_embeddings
 
-#if __name__ ==  "__main__":
-#    dataframe = Process().run()
-#    print(dataframe)
+if __name__ ==  "__main__":
+    dataframe = Process().run()
+    print(dataframe)

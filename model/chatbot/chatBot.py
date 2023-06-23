@@ -79,7 +79,7 @@ class ChatBot:
             response_message = "\nBienvenid@ al chatbot de la UPM."
             response_message += f"\n\nPregunta: {query}\n"
             response_message += f'\n{response["choices"][0]["message"]["content"]}'
-            source = f"\nPuedes consultar más en {where}."
+            source = f"\nPuedes consultar más en {where}.\n"
             response_message += source
             return response_message
         
