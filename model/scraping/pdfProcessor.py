@@ -12,7 +12,7 @@ import numpy as np
 from concurrent.futures import ThreadPoolExecutor
 
 # Import alumnoParser class to scrape the data
-from scraping.alumnoParser import alumnoParser
+from scraping.alumnoParser import AlumnoParser
 
 # Module management
 import os
@@ -20,7 +20,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(script_dir)
 
 
-class pdfProcessor:
+class PdfProcessor:
     def __init__(self, url_alumnos="https://www.upm.es/UPM/NormativaLegislacion/ActuacionesRegulaciones/Grado"):
         """Initialize a PDFProcessor object.
 
@@ -45,6 +45,7 @@ class pdfProcessor:
             response = requests.get(pdf_url)
             response.raise_for_status()
             return response.content
+        
         except requests.exceptions.RequestException as e:
             raise Exception(f"Error downloading PDF from {pdf_url}: {e}") from e
 
@@ -153,9 +154,10 @@ class pdfProcessor:
             chunks_df (DataFrame): The generated dataframe.
 
         """
-        scraper = alumnoParser(self.url_alumnos)
-        html = scraper.fetch_html()
-        pdfs_names,pdfs_elements = scraper.extract_pdf_urls()
+        scraper = AlumnoParser(self.url_alumnos)
+        scraper.fetch_html()
+        scraper.extract_pdf_urls()
+        pdfs_names,pdfs_elements = scraper.pdf_names, scraper.pdf_elements
 
         text_list = []
         with ThreadPoolExecutor() as executor:
@@ -174,8 +176,3 @@ class pdfProcessor:
         chunks_df.to_pickle("../../data/normativa_exploded_class.pkl")
 
         return chunks_df
-
-
-
-
-

@@ -4,17 +4,17 @@ import requests
 from urllib.parse import urljoin
 
 
-class alumnoParser:
-    def __init__(self, url_alumnos, url_parser='https://www.upm.es'):
+class AlumnoParser:
+    def __init__(self, url_alumnos, base_url='https://www.upm.es'):
         """Initialize an AlumnoParser object.
 
         Parameters:
             url_alumnos (str): The URL of the alumnos folder.
-            url_parser (str): The base URL for parsing.
+            base_url (str): The base URL for parsing.
 
         """
         self.url_alumnos = url_alumnos
-        self.url_parser = url_parser
+        self.base_url = base_url
         self.html_content = None
         self.pdf_names = []
         self.pdf_elements = []
@@ -31,7 +31,6 @@ class alumnoParser:
             response = requests.get(self.url_alumnos)
             response.raise_for_status()
             self.html_content = response.content
-            return self.html_content
             
         except requests.exceptions.RequestException as e:
             raise Exception(f"Error fetching content from {self.url_alumnos}: {e}") from e
@@ -78,14 +77,11 @@ class alumnoParser:
                         if latest_pdf:
                             pdf_name = output_str
                             self.pdf_names.append(pdf_name.replace("\n",""))
-                            pdf_url = urljoin(self.url_parser, latest_pdf[0]['href'].replace(' ', '%20'))
+                            pdf_url = urljoin(self.base_url, latest_pdf[0]['href'].replace(' ', '%20'))
                             self.pdf_elements.append(pdf_url)
                     else:
                         for a_element in pdf_a_elements:
                             pdf_name = output_str
                             self.pdf_names.append(pdf_name.replace("\n",""))
-                            pdf_url = urljoin(self.url_parser, a_element['href'].replace(' ', '%20'))
+                            pdf_url = urljoin(self.base_url, a_element['href'].replace(' ', '%20'))
                             self.pdf_elements.append(pdf_url)
-
-        return self.pdf_names,self.pdf_elements
-    
