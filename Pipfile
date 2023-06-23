@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+waitress = "*"
+openai = "*"
+numpy = "*"
+pandas = "*"
+python-dotenv = "*"
+flask = "*"
+flask-sqlalchemy = "*"
+flask-login = "*"
+bs4 = "*"
+pypdf2 = "*"
+lxml = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
