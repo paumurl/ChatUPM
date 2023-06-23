@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class similarity:
+class Similarity:
     def __init__(self, df):
         """Initialize the Similarity object.
 
