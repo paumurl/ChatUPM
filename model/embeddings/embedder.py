@@ -18,7 +18,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(script_dir)
 
 
-class embedder:
+class Embedder:
     embedding_model = embedding_model
     def __init__(self, df):
         """Initialize the Embedder object.
@@ -74,4 +74,3 @@ class embedder:
         self.df.to_pickle("../../data/normativa_embedding_class.pkl")
 
         return self.df
-
