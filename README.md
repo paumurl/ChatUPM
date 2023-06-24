@@ -18,7 +18,7 @@ Created to guide peers through the university journey!
   - ``app.py``, the Flask app.
 - ``data``: contains the pkl files for the scraped data (context pandas dataframe), after the preprocessing and the embeddings generation.
 - ``demo``: how the app deployment should look like.
-- ``model``: contains the files for the data scrapping, the embeddings generation and the chatbot itself.
+- ``model``: contains the files for the data scraping, the embeddings generation and the chatbot itself.
   - ``chatbot`` folder contains the chatbot implementation, given the context dataframe.
   - ``process`` folder contains the processing of the scraped data (both retrieval and embeddings), which can be run as standalone processes in ``scraping`` and ``embeddings`` classes.
 - ``Pipfile`` and ``Pipfile.lock``: to manage dependencies using pipenv.
