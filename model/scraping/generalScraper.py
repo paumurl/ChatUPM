@@ -17,7 +17,3 @@ class GeneralScraper:
         """Parse the alumnos url, downloads the pdfs and creates a dataframe."""
         dataframe = self.pdf_processor.create_dataframe()
         return dataframe
-
-if __name__ == "__main__":
-    df = GeneralScraper().to_dataframe()
-    print(df.head())
