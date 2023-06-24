@@ -10,6 +10,19 @@ Created to guide peers through the university journey!
   <img width="200" src="app/static/media/chatupm-logo-PS.png" alt="ChatUPM logo">
 </p>
 
+## Project Structure
+- ``app``: contains the files for the self-hosted fronted website.
+  - ``instance`` folder with the SQLAlchemy database for users management.
+  - ``static`` folder for the css and media files.
+  - ``templates`` folder with the html files for the fronted page.
+  - ``app.py``, the Flask app.
+- ``data``: contains the pkl files for the scraped data (context pandas dataframe), after the preprocessing and the embeddings generation.
+- ``demo``: how the app deployment should look like.
+- ``model``: contains the files for the data scrapping, the embeddings generation and the chatbot itself.
+  - ``chatbot`` folder contains the chatbot implementation, given the context dataframe.
+  - ``process`` folder contains the processing of the scraped data (both retrieval and embeddings), which can be run as standalone processes in ``scraping`` and ``embeddings`` folders.
+
+
 ## Installation
 To use ChatUPM, you need to have Python installed on your machine. Follow these steps to get started:
 > **Warning**
