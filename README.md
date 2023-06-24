@@ -20,7 +20,7 @@ Created to guide peers through the university journey!
 - ``demo``: how the app deployment should look like.
 - ``model``: contains the files for the data scrapping, the embeddings generation and the chatbot itself.
   - ``chatbot`` folder contains the chatbot implementation, given the context dataframe.
-  - ``process`` folder contains the processing of the scraped data (both retrieval and embeddings), which can be run as standalone processes in ``scraping`` and ``embeddings`` folders.
+  - ``process`` folder contains the processing of the scraped data (both retrieval and embeddings), which can be run as standalone processes in ``scraping`` and ``embeddings`` classes.
 - ``Pipfile`` and ``Pipfile.lock``: to manage dependencies using pipenv.
 -  ``requirements.txt`` as an alternative to manage dependencies.
 -  ``run.py`` to deploy the Flask app using Waitress.
