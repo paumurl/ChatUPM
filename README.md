@@ -14,19 +14,26 @@ Created to guide peers through the university journey!
 To use ChatUPM, you need to have Python installed on your machine. Follow these steps to get started:
 > **Warning**
 > Bear in mind that you need an API key for the use of the OpenAI models. This project was built with the [Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/chatgpt-quickstart?tabs=command-line&pivots=programming-language-python) in mind, but can be adapted nonetheless.<br/>
-1. Clone the ChatUPM repository:
+1. Install pipenv if you haven't already:
+```bash
+$ pip instal pipenv
+```
+2. Clone the ChatUPM repository:
 ```bash
 $ git clone https://github.com/paumurl/ChatUPM.git
 ```
-2. Install the required dependencies:
+3. Create a new virtual enviroment in the project folder:
 ```bash
-$ pip instal -r requirements.txt
+$ pipenv shell
 ```
-3. Run the ChatUPM application deployed using Waitress:
+4. Install the necessary dependencies (listed in the Pipfile):
 ```bash
-$ python {your path}/run.py
+$ pipenv install
 ```
-
+5. Run the ChatUPM application deployed using Waitress:
+```bash
+$ pipenv run python {your path}/run.py
+```
 This will launch the ChatUPM locally hosted website in localhost:5000.
 
 
@@ -40,7 +47,7 @@ This project consisted of different functionalities:
 
 
 ### Self-hosted web application
-Once you have deployed the ChatUPM REST API (step 3 of the [Installation](#installation)), you can go to localhost:5000 to enjoy the web service. Here's an example of how to interact with ChatUPM through the fronted architecture:
+Once you have deployed the ChatUPM REST API (step 5 of the [Installation](#installation)), you can go to localhost:5000 to enjoy the web service. Here's an example of how to interact with ChatUPM through the fronted architecture:
 
 <p align="center">
   <img width="450" src="demo/website1.png" alt="ChatUPM website">
@@ -71,7 +78,7 @@ And now, chat away! Have a go at ChatUPM and the knowledge it holds regarding th
 ### Want to try modules?
 As in any project, you can individually run different modules depending on your needs for funcionalities. To run the ChatUPM REST API, you need the embeddings dataframe. If this is the first time you run the project and are not using the data provided here, then you will need first to scrape the normative and generate the embeddings for the data chunks. This can be simply done by running the following command:
 ```
-$ python {your path}/model/processing/process.py
+$ pipenv run python {your path}/model/processing/process.py
 ```
 And that's it! You now have your dataframe, locally stored in the existing ``data`` folder.
 
