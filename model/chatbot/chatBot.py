@@ -37,10 +37,6 @@ class ChatBot:
         Parameters:
             query (string): the user's question we want to provide and answer for.
 
-            tensor (bool, optional): whether to use a multilingual sentence encoder 
-                (https://tfhub.dev/google/universal-sentence-encoder-multilingual/3)
-                 to create embeddings and use them for the semantic search.
-
         Returns:
             None
 
@@ -72,16 +68,18 @@ class ChatBot:
                 temperature = 0.5
             )
         
+        # To pick the most probable pdf to find the answer (the most common out of the three most similar chunks)
         where_all = [text for text in df_emb_tensor['normativa'].iloc[:3]]
         where = max(set(where_all), key=where_all.count)
         
-        if terminal == True:
+        if terminal:
             response_message = "\nBienvenid@ al chatbot de la UPM."
             response_message += f"\n\nPregunta: {query}\n"
             response_message += f'\n{response["choices"][0]["message"]["content"]}'
             source = f"\nPuedes consultar más en {where}.\n"
             response_message += source
             return response_message
+
         
         else:
             response_message = f'\n{response["choices"][0]["message"]["content"]}'
