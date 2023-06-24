@@ -1,2 +1,2 @@
-# Demo
-Demo images for the deployment's results.
+## Demo
+Demo images mainly for the deployment results.
