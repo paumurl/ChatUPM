@@ -118,7 +118,7 @@ def chatbot():
     if request.method == 'POST':
         user = current_user.username
         userText = request.form.get('msg')
-        botText = chatupm.answer(userText)  # Replace with your chatbot logic
+        botText = chatupm.answer(userText)
         response = {'botText': botText,
                     'user': user}
         return jsonify(response)
