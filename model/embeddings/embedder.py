@@ -49,7 +49,6 @@ class Embedder:
             raise Exception(f"Error creating embedding from '{text}': {e}") from e
 
 
-
     def dataframe_embedding(self):
         """Returns the embedded chunks as a new column in the dataframe.
 
@@ -71,5 +70,3 @@ class Embedder:
         # Assign the temporary list to the 'embedding' column
         self.df['embedding'] = embeddings
         self.df.to_pickle("../../data/normativa_embedding_class.pkl")
-
-        return self.df

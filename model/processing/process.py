@@ -29,10 +29,10 @@ class Process:
         embedder_obj = Embedder(df)
 
         # Generate the embeddings and get the updated DataFrame
-        df_with_embeddings = embedder_obj.dataframe_embedding()
+        embedder_obj.dataframe_embedding()
 
         # Return the final DataFrame
-        return df_with_embeddings
+        return embedder_obj.df
 
 if __name__ ==  "__main__":
     dataframe = Process().run()
