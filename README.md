@@ -52,7 +52,7 @@ $ pipenv run python {your path}/run.py
 ```
 This will launch the ChatUPM locally hosted website in localhost:5000.
 
-The ``requirements.txt`` file is also provided as an alternative to the pipenv management.
+The ``requirements.txt`` file is also provided as an alternative to the ``pipenv`` management.
 
 ## Usage
 ChatUPM is designed to provide you with quick and accurate information about the student regulations at UPM. Simply start a conversation with the chatbot and ask your questions. It will understand and respond accordingly.
