@@ -44,12 +44,13 @@ class ChatBot:
         similarity_obj = Similarity(self.df)
         # df = pd.read_pickle('./data/normativa_embeddings.pkl')
         query_emb = Embedder.get_embedding(query)
-        df_emb = similarity_obj.df_cosine_similarity(query_emb)
 
-    
+        # We get the dataframe
+        similarity_obj.df_cosine_similarity(query_emb)
+        df_emb = similarity_obj.df
         df_emb_tensor = df_emb.sort_values(by='similarity', ascending=False)
 
-
+        # GPT internal instructions 
         introduction = 'Usa la información de debajo para contestar sobre la normativa de la Universidad Politécnica de Madrid. Eres ingenioso y carismático. Responde de forma escueta."'
         question = f"\n\nPregunta: {query}"
         message = introduction

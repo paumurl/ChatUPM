@@ -42,4 +42,3 @@ class Similarity:
         self.df['similarity'] = ''
         self.df['similarity'] = [self.vector_similarity(query_emb,np.array(i)) for i in self.df['embedding']]
         self.df = self.df.sort_values(by='similarity', ascending=False)
-        return self.df
