@@ -37,8 +37,6 @@ class Embedder:
             text (str): The input text to generate embeddings for.
             deployment_id (str, optional): The deployment ID of the embedding model. Defaults to embedding_model in config.py file.
 
-        Returns:
-            result (ndarray): Numeric vector embedding for the input text.
         """
         try:
             result = openai.Embedding.create(deployment_id=deployment_id, input=text)
@@ -50,12 +48,7 @@ class Embedder:
 
 
     def dataframe_embedding(self):
-        """Returns the embedded chunks as a new column in the dataframe.
-
-        Returns:
-            df (DataFrame): The dataframe with an additional 'embedding' column containing the numeric vector embeddings.
-
-        """
+        """ Returns the embedded chunks as a new column in the dataframe. """
         self.df['embedding'] = ''
         num_rows = len(self.df)
         embeddings = [np.nan] * num_rows  # Initialize a list with NaN values

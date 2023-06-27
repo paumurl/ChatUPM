@@ -14,7 +14,7 @@
                 e.preventDefault();
                 var userMessage = $('#user-message').val();
                 
-
+                // Send the message to the server using AJAX
                 $.ajax({
                     type: 'POST',
                     url: '/chatbot',
@@ -22,20 +22,26 @@
                     success: function(response) {
                         var botText = response.botText;
                         var user = response.user;
+                        
+                        // Show the user message and the chatbot response
                         displayUserMessage(user, userMessage);
                         displayBotMessage(botText);
-                        $('#user-message').val(''); // Clear input field
+
+                        // Clear input field and focus on the recent messages
+                        $('#user-message').val(''); 
                         $('#user-message').focus();
                     }
                 });
             });
 
+            // To show the user message in the interface in a separate container
             function displayUserMessage(user,userMessage) {
                 var messageContainer = $('#message-container');
                 var userMessage = $('<div class="message user-message"><strong>'+ user+':</strong> ' + userMessage + '</div>');
                 messageContainer.append(userMessage);
             }
 
+            // To show the bot response in the interface in a separate container
             function displayBotMessage(botText) {
                 var messageContainer = $('#message-container');
                 var botMessage = $('<div class="message bot-message"><strong>ChatUPM:</strong> ' + botText + '</div>');
